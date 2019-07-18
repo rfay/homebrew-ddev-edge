@@ -1,8 +1,8 @@
 class Ddev < Formula
   desc "ddev: a local development environment management system"
   homepage "https://ddev.readthedocs.io/en/stable/"
-  url "https://github.com/drud/ddev/archive/v1.9.1.tar.gz"
-  sha256 "c469effc39a606cb37f5f547805a2ac17d2f95a773bc15226b7c60144bad0027"
+  url "https://github.com/drud/ddev/archive/v1.10.0-alpha1.tar.gz"
+  sha256 "b6406a3736fe3435e33866765260f3fbc80e3f9a072d4c345ac069e1a50a697e"
 
   # depends_on "docker" => :run
   # depends_on "docker-compose" => :run
@@ -12,10 +12,10 @@ class Ddev < Formula
   depends_on "nss" => :run
 
   bottle do
-    root_url "https://github.com/drud/ddev/releases/download/v1.9.1/"
+    root_url "https://github.com/drud/ddev/releases/download/v1.10.1-alpha1/"
     cellar :any_skip_relocation
-    sha256 "d195bc3df6e05a9a44ff9b19847718a362bf2f5f6091feb7e53dfce22a6af14e" => :x86_64_linux
-    sha256 "394cecbc7653e30e807080f8d4f115df87e40db9b3cdfbfdd2282025a96c8d99" => :sierra
+    sha256 "cf1bccafebc8d39574c4b75a9672e3edc92165b5bca51fa2b53ae5086925c27b" => :x86_64_linux
+    sha256 "0a1d6dda3fbab4b0fce62fa2d62874c680c1b775160ff94581a4ae6060c96049" => :sierra
   end
 
   def install
@@ -37,7 +37,7 @@ class Ddev < Formula
 
   def caveats
   <<~EOS
-PLEASE MAKE SURE to do `mkcert -install`, which may require your sudo password.
+Make sure to do a `mkcert -install` if you haven't done it before, it may require your sudo password.
 
 ddev requires docker and docker-compose.
 Docker installation instructions at https://ddev.readthedocs.io/en/stable/users/docker_installation/
