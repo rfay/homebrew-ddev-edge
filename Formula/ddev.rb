@@ -12,12 +12,11 @@ class Ddev < Formula
   depends_on "nss" => :run
 
   bottle do
-    root_url "https://github.com/drud/ddev/releases/download/v1.10.1-alpha1/"
+    root_url "https://github.com/drud/ddev/releases/download/v1.10.0-alpha1/"
     cellar :any_skip_relocation
     sha256 "cf1bccafebc8d39574c4b75a9672e3edc92165b5bca51fa2b53ae5086925c27b" => :x86_64_linux
     sha256 "0a1d6dda3fbab4b0fce62fa2d62874c680c1b775160ff94581a4ae6060c96049" => :sierra
   end
-
   def install
     system "make", "VERSION=v#{version}", "COMMIT=v#{version}"
     system "mkdir", "-p", "#{bin}"
