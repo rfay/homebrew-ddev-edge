@@ -1,7 +1,7 @@
 class Ddev < Formula
   desc "ddev: a local development environment management system"
   homepage "https://ddev.readthedocs.io/en/stable/"
-  url "https://github.com/drud/ddev/archive/v1.12.0-rc1.tar.gz"
+  url "https://github.com/drud/ddev/archive/v1.12.0-rc2.tar.gz"
   sha256 "de4a99c0696e878c516ddf1153f2c1c39baa6da20fd4f55afd959525906f9bac"
 
   # depends_on "docker" => :run
@@ -12,10 +12,10 @@ class Ddev < Formula
   depends_on "nss" => :run
 
   bottle do
-    root_url "https://github.com/drud/ddev/releases/download/v1.12.0-rc1/"
+    root_url "https://github.com/drud/ddev/releases/download/v1.12.0-rc2/"
     cellar :any_skip_relocation
-    sha256 "aee0f1484600f93a29f4234db9005f66a81ea2df58635940e3edd120881bccf6" => :x86_64_linux
-    sha256 "c81734901517a58e2f577b08f81fbf5277dc662824f131914ab2a70818dc404d" => :sierra
+    sha256 "a8f8c34df8d766c367b77d25140fd0af153a5b959f2e22f1fc2d5a72b4e7bf2c" => :x86_64_linux
+    sha256 "4c706323d1bb489e839bc4a0bd9c8ccb004cf1ada50efa373dd37c066b8e106a" => :sierra
   end
   def install
     system "make", "VERSION=v#{version}", "COMMIT=v#{version}"
@@ -31,7 +31,7 @@ class Ddev < Formula
   end
 
   test do
-    system "#{bin}/ddev", "version"
+    system "#{bin}/ddev", "--version"
   end
 
   def caveats
