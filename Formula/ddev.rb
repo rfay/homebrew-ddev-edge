@@ -1,8 +1,8 @@
 class Ddev < Formula
   desc "ddev: a local development environment management system"
   homepage "https://ddev.readthedocs.io/en/stable/"
-  url "https://github.com/drud/ddev/archive/v1.15-alpha5.tar.gz"
-  sha256 "edd68d4ab6e6a86f91ff563c077591fd326adca67c66c2e77d224c6861617fc7"
+  url "https://github.com/drud/ddev/archive/v1.15-alpha6.tar.gz"
+  sha256 "7b0500e7bc3a25951a44c43422c173555c9492c79bdd284bc8c48f076760c3c6"
 
   # depends_on "docker" => :run
   # depends_on "docker-compose" => :run
@@ -12,10 +12,10 @@ class Ddev < Formula
   depends_on "nss" => :run
 
   bottle do
-    root_url "https://github.com/drud/ddev/releases/download/v1.15-alpha5/"
+    root_url "https://github.com/drud/ddev/releases/download/v1.15-alpha6/"
     cellar :any_skip_relocation
-    sha256 "c736bd673daf4c2426f6d5811e482cece4fc9f1e6fe1009d9544e5d9b33da3f0" => :x86_64_linux
-    sha256 "d5853d9d9bb12f7b6ba19d379550f64bb760a387020e0f51a5ead9d6aed6fcc9" => :sierra
+    sha256 "2699093ed68cf4ed4d2851999c31e15ea11f172630c17fd68868739f7ef55982" => :x86_64_linux
+    sha256 "5fb84aab0f86a75c85956e243a33b597a5bd8cd367a9d6225dbe1ebe57b88e21" => :sierra
   end
   def install
     system "make", "VERSION=v#{version}", "COMMIT=v#{version}"
@@ -29,6 +29,7 @@ class Ddev < Formula
     end
     bash_completion.install ".gotmp/bin/ddev_bash_completion.sh" => "ddev"
     zsh_completion.install ".gotmp/bin/ddev_zsh_completion.sh" => "ddev"
+    fish_completion.install ".gotmp/bin/ddev_fish_completion.sh" => "ddev"
   end
 
   test do
