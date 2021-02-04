@@ -14,9 +14,9 @@ class Ddev < Formula
   bottle do
     root_url "https://github.com/drud/ddev/releases/download/v1.17.0-alpha4/"
     cellar :any_skip_relocation
-    sha256 "fe37573973a0b3ab07d58a1ae0b18aedfbf35dce1b2de0e5baed1fd8445e79df" => :x86_64_linux
-    sha256 "f646d26cc77bf0d8c177f80a6c4fa69f99b836e5a6237ca7d1004102c79eadb8" => :high_sierra
-    sha256 "474aaed328d8f88d3c7537481ea577800bf8c7220c4a001d3c30fd950b687dc0" => :arm64_big_sur
+    sha256 "156ab43f252295255b2a87af09b3c2b9f6c77e88cab45c677f156923ed7cfdc2" => :x86_64_linux
+    sha256 "25321e7ecc7bf5a4f97996a698a369cc4e05be2a87b8a8326c8cc1afa549afff" => :high_sierra
+    sha256 "d3e2fd360f8b439561be5ca26735632d1d764a7a82797f28c4a5f0613329c9e3" => :arm64_big_sur
   end
   def install
     system "make", "VERSION=v#{version}", "COMMIT=v#{version}"
