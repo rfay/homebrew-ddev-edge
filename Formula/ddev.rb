@@ -15,12 +15,12 @@ class Ddev < Formula
   depends_on "nss" => :run
   def install
     system "make", "VERSION=v#{version}", "COMMIT=v#{version}"
-    Fileutils.mkdir_p bin.to_s
+    system "mkdir", "-p", "#{bin}"
     if OS.mac?
-      Fileutils.cp(".gotmp/bin/darwin_amd64/ddev", "#{bin}/ddev")
+      system "cp", ".gotmp/bin/darwin_amd64/ddev", "#{bin}/ddev"
       system ".gotmp/bin/darwin_amd64/ddev_gen_autocomplete"
     else
-      Fileutils.cp(".gotmp/bin/ddev", "#{bin}/ddev")
+      system "cp", ".gotmp/bin/ddev", "#{bin}/ddev"
       system ".gotmp/bin/ddev_gen_autocomplete"
     end
     bash_completion.install ".gotmp/bin/ddev_bash_completion.sh" => "ddev"
