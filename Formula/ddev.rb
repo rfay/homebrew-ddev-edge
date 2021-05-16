@@ -1,17 +1,17 @@
 class Ddev < Formula
   desc "Local development environment management system"
   homepage "https://ddev.readthedocs.io/en/stable/"
-  url "https://github.com/rfay/ddev/archive/v1.18.0-a6.tar.gz"
-  sha256 "7208c3b45b3f4470ad327bccdcb43e824fd452c3b0b3463a409035f4da9fe9fd"
+  url "https://github.com/rfay/ddev/archive/v1.18.0-alpha7.tar.gz"
+  sha256 "13f7676bdc896cee49f6800b3a4eb931700012effdad545bf6d223b0295b7002"
 
   depends_on "mkcert" => :run
   depends_on "nss" => :run
 
   bottle do
-    root_url "https://github.com/rfay/ddev/releases/download/v1.18.0-a6/"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "8573679e3c50b23ea8ab2549edcae94495aaf66e2b4b7a07add7781edbf8934e"
-    sha256 cellar: :any_skip_relocation, high_sierra: "2b74535740ebde27b4a9da2a686caf76120177bb01e59de9b5969abc208f599a"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "f39e6e64754a5748e4e4cebd9b444d64fd90ee3f774d179d4d58a3045628a051"
+    root_url "https://github.com/rfay/ddev/releases/download/v1.18.0-alpha7/"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "f50c1ae179a6e3b91eb071901668a1125f7784071b8a9c1d21c3214634d224d5"
+    sha256 cellar: :any_skip_relocation, high_sierra: "06e062ca6696d419a76dbc68ad6e8aad7a5960adf2b13af73a3573656a3eb9a7"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "cb60b8fdc4e35a823a86411a30954e4cfcf4c24672759ed256821aa9f7156a54"
   end
   def install
     system "make", "VERSION=v#{version}", "COMMIT=v#{version}"
